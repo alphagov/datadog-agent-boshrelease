@@ -1,0 +1,40 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+
+# Detect # of CPUs so make jobs can be parallelized
+CPUS=$(grep -c ^processor /proc/cpuinfo)
+ # Available variables
+# $BOSH_COMPILE_TARGET - where this package & spec'd source files are available
+# $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
+DEPENDENCY_DIR="$(cd $BOSH_INSTALL_TARGET/.. && pwd)"
+
+AGENT_VERSION="5.8.5"
+DD_START_AGENT=0
+PIP_VERSION=6.1.1
+SETUPTOOLS_VERSION=20.9.0
+
+mkdir -p $BOSH_INSTALL_TARGET/bin
+cp -LR $DEPENDENCY_DIR/virtualenv $BOSH_INSTALL_TARGET/venv
+source $BOSH_INSTALL_TARGET/venv/bin/activate
+
+source $DEPENDENCY_DIR/python-dev/profile.sh
+
+VENV_PYTHON_CMD="$BOSH_INSTALL_TARGET/venv/bin/python"
+VENV_PIP_CMD="$BOSH_INSTALL_TARGET/venv/bin/pip"
+
+$VENV_PYTHON_CMD datadog-agent/ez_setup.py --version="$SETUPTOOLS_VERSION" --to-dir=$BOSH_INSTALL_TARGET
+$VENV_PYTHON_CMD datadog-agent/get-pip.py
+$VENV_PIP_CMD install "pip==$PIP_VERSION" --global-option=build_ext --global-option="-I$INCLUDE_PATH" --global-option="-L$LD_LIBRARY_PATH"
+$VENV_PIP_CMD install -r datadog-agent/requirements.txt --global-option=build_ext --global-option="-I$INCLUDE_PATH" --global-option="-L$LD_LIBRARY_PATH"
+set +e
+$VENV_PIP_CMD install -r datadog-agent/requirements-opt.txt --global-option=build_ext --global-option="-I$INCLUDE_PATH" --global-option="-L$LD_LIBRARY_PATH"
+set -e
+
+rm -f "$BOSH_INSTALL_TARGET/setuptools-$SETUPTOOLS_VERSION.zip"
+rm -f "$BOSH_INSTALL_TARGET/ez_setup.py"
+rm -f "$BOSH_INSTALL_TARGET/ez_setup.pyc"
+rm -f "$BOSH_INSTALL_TARGET/get-pip.py"
+rm -f "$BOSH_INSTALL_TARGET/get-pip.pyc"
+rm -f "$BOSH_INSTALL_TARGET/requirements.txt"
+
+mkdir -p $BOSH_INSTALL_TARGET/agent
+tar xzf datadog-agent/agent.tar.gz -C $BOSH_INSTALL_TARGET/agent --strip-components 1
