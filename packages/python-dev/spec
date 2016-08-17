@@ -1,0 +1,6 @@
+---
+name: python-dev
+dependencies: []
+files:
+- apt/python-dev/profile.sh
+- apt/python-dev/*.deb

@@ -1,1 +1,69 @@
---- {}
+---
+virtualenv/virtualenv-1.11.6.py:
+  object_id: 5fe339bd-9bc2-4112-a6e3-bc6c013c5e9b
+  sha: a506a836ef76301bc19e5a209984a4286529a79b
+  size: 98477
+datadog-agent/agent.tar.gz:
+  object_id: f10d0d4f-1867-4f0c-a0b9-c2ec1638cab6
+  sha: 470b815e4cfc087e29bce6037456326fe916726e
+  size: 7112750
+datadog-agent/ez_setup.py:
+  object_id: dc2d372d-0f51-4447-a2ed-b1960f3c58eb
+  sha: 6f4ad84d852b9eb3132035cfd88dbd212714a48c
+  size: 12402
+datadog-agent/get-pip.py:
+  object_id: 5211ca17-6b2c-4d35-ba72-929b077e2827
+  sha: 20da892e83c4f3ae8b523c8a3f8f4e29e935aef7
+  size: 1524722
+datadog-agent/requirements-opt.txt:
+  object_id: 3a6257bc-785d-4e28-be52-8172b5b9df7f
+  sha: 8d23e59ce93ef2cbb000440a5a260a4cde1a2a4e
+  size: 1478
+datadog-agent/requirements.txt:
+  object_id: 0feec7b9-3ca9-4360-bafd-7d699be7edd5
+  sha: b76f6d06e38688f1f512952a9ed2b1ebcb7ece3d
+  size: 1926
+apt/python-dev/libexpat1-dev_2.1.0-4ubuntu1.3_amd64.deb:
+  object_id: 6ee9956a-7645-46f6-9893-9c1255de9bde
+  sha: 70b2766fb83200073459dab66709f14bbb8fef57
+  size: 115202
+apt/python-dev/libexpat1_2.1.0-4ubuntu1.3_amd64.deb:
+  object_id: 3c144009-5eb5-4a4a-8948-ef93c5f46f2e
+  sha: b9a62f58c76a4f917defef9b0bce2a15197306ac
+  size: 71134
+apt/python-dev/libpython-dev_2.7.5-5ubuntu3_amd64.deb:
+  object_id: 15812c5d-d189-4c17-b9c2-3fb27cb62421
+  sha: 8ea63c31b460a972f230e89deddde1a1cc978317
+  size: 7078
+apt/python-dev/libpython2.7-dev_2.7.6-8ubuntu0.2_amd64.deb:
+  object_id: abd0605f-33de-4610-87d5-a106bc3c5227
+  sha: ed8980613989d581af60c30ec5c97384c3e5d44f
+  size: 22007718
+apt/python-dev/libpython2.7-minimal_2.7.6-8ubuntu0.2_amd64.deb:
+  object_id: d7b1c38e-8aa4-437e-9a04-aac64997036e
+  sha: d8dcfb156026bbf451502eef0fc0376fa3fabefc
+  size: 307916
+apt/python-dev/libpython2.7-stdlib_2.7.6-8ubuntu0.2_amd64.deb:
+  object_id: ccd4d6ff-9858-43ed-81cc-850d7e602fed
+  sha: b3a639145df0e1fd76a98cb4c6f1ac08f2c4de2f
+  size: 1869374
+apt/python-dev/libpython2.7_2.7.6-8ubuntu0.2_amd64.deb:
+  object_id: 1e291ab2-c6a5-4726-8540-e2dd937c6b9c
+  sha: 2660bd56f54a2601d227bd4a43641db7d8e2bfcc
+  size: 1038642
+apt/python-dev/python-dev_2.7.5-5ubuntu3_amd64.deb:
+  object_id: f06b0c4c-2f81-496d-a4a5-0a8f278e1b01
+  sha: 13e6be388dae2131d3ac6c17242fe28f2d6b6b3d
+  size: 1166
+apt/python-dev/python2.7-dev_2.7.6-8ubuntu0.2_amd64.deb:
+  object_id: c776461c-77bc-42db-8849-4865b3b4c0d3
+  sha: 3239f647321900abf034bed6be6bac2f66158954
+  size: 269106
+apt/python-dev/python2.7-minimal_2.7.6-8ubuntu0.2_amd64.deb:
+  object_id: 5ceb380e-7890-439f-aea6-af4caa06fa8f
+  sha: 984bfe30245a2e757341b0c9abb16f97ae51b0b8
+  size: 1185096
+apt/python-dev/python2.7_2.7.6-8ubuntu0.2_amd64.deb:
+  object_id: 48a21a13-f31d-4794-9033-69cdb47dfe05
+  sha: b87ff6940cd17466e867a5e1e6f70fbca14cfe0c
+  size: 195822

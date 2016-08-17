@@ -1,0 +1,24 @@
+---
+name: datadog-agent
+packages:
+- datadog-agent
+templates:
+  bin/collector_ctl: bin/collector_ctl
+  bin/dogstatsd_ctl: bin/dogstatsd_ctl
+  bin/forwarder_ctl: bin/forwarder_ctl
+  bin/monit_debugger: bin/monit_debugger
+  config/datadog.conf.erb: config/datadog.conf
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+properties:
+  api_key:
+    description: Datadog API key
+  collect_ec2_tags:
+    description: Collect AWS EC2 custom tags as agent tags (requires an IAM role associated with the instance)
+  hostname:
+    description: Hostname as it should be displayed within datadog. Optional.
+  tags:
+    default: {}
+    description: A dictionary of tag names and values for categories that will be applied to the data sent from this agent.
