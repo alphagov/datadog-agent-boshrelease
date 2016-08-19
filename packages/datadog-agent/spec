@@ -2,10 +2,10 @@
 name: datadog-agent
 dependencies:
 - python-dev
-- virtualenv
 files:
 - datadog-agent/agent.tar.gz
 - datadog-agent/ez_setup.py
 - datadog-agent/get-pip.py
 - datadog-agent/requirements.txt
 - datadog-agent/requirements-opt.txt
+- datadog-agent/virtualenv-1.11.6.py

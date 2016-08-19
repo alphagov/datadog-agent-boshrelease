@@ -11,9 +11,10 @@ AGENT_VERSION="5.8.5"
 DD_START_AGENT=0
 PIP_VERSION=6.1.1
 SETUPTOOLS_VERSION=20.9.0
+VIRTUALENV_VERSION="1.11.6"
 
-mkdir -p $BOSH_INSTALL_TARGET/bin
-cp -LR $DEPENDENCY_DIR/virtualenv $BOSH_INSTALL_TARGET/venv
+mkdir -p $BOSH_INSTALL_TARGET/venv
+python datadog-agent/virtualenv-$VIRTUALENV_VERSION.py --no-pip --no-setuptools $BOSH_INSTALL_TARGET/venv
 source $BOSH_INSTALL_TARGET/venv/bin/activate
 
 source $DEPENDENCY_DIR/python-dev/profile.sh

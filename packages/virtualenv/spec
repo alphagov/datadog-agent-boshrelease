@@ -1,5 +1,0 @@
----
-name: virtualenv
-dependencies: []
-files:
-- virtualenv/virtualenv-1.11.6.py
