@@ -123,7 +123,7 @@ use_mount: no
 # ========================================================================== #
 
 # If you don't want to enable the DogStatsd server, set this option to no
-use_dogstatsd: no
+use_dogstatsd: <%= p("use_dogstatsd") %>
 
 # DogStatsd is a small server that aggregates your custom app metrics. For
 # usage information, check out http://docs.datadoghq.com/guides/dogstatsd/

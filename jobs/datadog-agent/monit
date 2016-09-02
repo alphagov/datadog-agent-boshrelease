@@ -10,8 +10,10 @@ check process datadog-agent-forwarder
   stop program "/var/vcap/jobs/datadog-agent/bin/monit_debugger forwarder_ctl '/var/vcap/jobs/datadog-agent/bin/forwarder_ctl stop'"
   group vcap
 
+<% if p('use_dogstatsd') do %>
 check process datadog-agent-dogstatsd
   with pidfile /var/vcap/sys/run/datadog-agent/dogstatsd.pid
   start program "/var/vcap/jobs/datadog-agent/bin/monit_debugger dogstatsd_ctl '/var/vcap/jobs/datadog-agent/bin/dogstatsd_ctl start'"
   stop program "/var/vcap/jobs/datadog-agent/bin/monit_debugger dogstatsd_ctl '/var/vcap/jobs/datadog-agent/bin/dogstatsd_ctl stop'"
   group vcap
+<% end %>
