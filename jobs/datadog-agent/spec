@@ -2,6 +2,7 @@
 name: datadog-agent
 packages:
 - datadog-agent
+- python-dev
 templates:
   bin/collector_ctl: bin/collector_ctl
   bin/dogstatsd_ctl: bin/dogstatsd_ctl
