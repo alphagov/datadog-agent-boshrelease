@@ -20,6 +20,9 @@ properties:
     description: Collect AWS EC2 custom tags as agent tags (requires an IAM role associated with the instance)
   hostname:
     description: Hostname as it should be displayed within datadog. Optional.
+  use_dogstatsd:
+    default: yes
+    description: Should the dogstatsd agent be started
   tags:
     default: {}
     description: A dictionary of tag names and values for categories that will be applied to the data sent from this agent.
