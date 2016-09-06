@@ -22,3 +22,8 @@ properties:
   tags:
     default: {}
     description: A dictionary of tag names and values for categories that will be applied to the data sent from this agent.
+  integrations:
+    default: {}
+    description: |
+      Agent integration configuration.
+      Each key will have ".yaml" appended to it and the value dumped into that file in `AGENT_DIR/conf.d/`.
