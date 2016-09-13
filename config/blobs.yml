@@ -16,9 +16,9 @@ datadog-agent/get-pip.py:
   sha: 20da892e83c4f3ae8b523c8a3f8f4e29e935aef7
   size: 1524722
 datadog-agent/requirements-opt.txt:
-  object_id: 3a6257bc-785d-4e28-be52-8172b5b9df7f
-  sha: 8d23e59ce93ef2cbb000440a5a260a4cde1a2a4e
-  size: 1478
+  object_id: 957fa648-9eb3-4673-b2da-391a64042c8d
+  sha: 069e5471ce75437a4427a79109cfd7cd4976a138
+  size: 1484
 datadog-agent/requirements.txt:
   object_id: 0feec7b9-3ca9-4360-bafd-7d699be7edd5
   sha: b76f6d06e38688f1f512952a9ed2b1ebcb7ece3d
