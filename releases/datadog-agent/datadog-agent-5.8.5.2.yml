@@ -1,0 +1,26 @@
+---
+packages:
+- name: datadog-agent
+  version: f466dd5ff097ebf5ca729e3a8e1a79e5abad989b
+  fingerprint: f466dd5ff097ebf5ca729e3a8e1a79e5abad989b
+  sha1: 068a9f520ddad12c34eae4963be0c0fa9f6c8092
+  dependencies:
+  - python-dev
+- name: python-dev
+  version: e3b2dd781300c56102aa046428069c2648ddd4a5
+  fingerprint: e3b2dd781300c56102aa046428069c2648ddd4a5
+  sha1: 190536c377c3bbd0a0e44e1b58857d7542a6c58e
+  dependencies: []
+jobs:
+- name: datadog-agent
+  version: 2d3944b162852a506e46b85d799e6dbeac443dce
+  fingerprint: 2d3944b162852a506e46b85d799e6dbeac443dce
+  sha1: 33357726756b8e7a844cf0585241b36aa1609c79
+license:
+  version: 94ec8797c1898217dbe180bb79797f5650233335
+  fingerprint: 94ec8797c1898217dbe180bb79797f5650233335
+  sha1: fd89eb46cac1d9ed12ef859e7be2c9de11b0f6c2
+commit_hash: f6552e7d
+uncommitted_changes: true
+name: datadog-agent
+version: 5.8.5.2
