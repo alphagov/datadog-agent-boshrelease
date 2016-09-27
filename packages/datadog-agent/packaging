@@ -26,9 +26,7 @@ $VENV_PYTHON_CMD datadog-agent/ez_setup.py --version="$SETUPTOOLS_VERSION" --to-
 $VENV_PYTHON_CMD datadog-agent/get-pip.py
 $VENV_PIP_CMD install "pip==$PIP_VERSION" --global-option=build_ext --global-option="-I$INCLUDE_PATH" --global-option="-L$LD_LIBRARY_PATH"
 $VENV_PIP_CMD install -r datadog-agent/requirements.txt --global-option=build_ext --global-option="-I$INCLUDE_PATH" --global-option="-L$LD_LIBRARY_PATH"
-set +e
 $VENV_PIP_CMD install -r datadog-agent/requirements-opt.txt --global-option=build_ext --global-option="-I$INCLUDE_PATH" --global-option="-L$LD_LIBRARY_PATH"
-set -e
 
 rm -f "$BOSH_INSTALL_TARGET/setuptools-$SETUPTOOLS_VERSION.zip"
 rm -f "$BOSH_INSTALL_TARGET/ez_setup.py"
