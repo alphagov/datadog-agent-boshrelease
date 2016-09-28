@@ -2,6 +2,7 @@
 name: datadog-agent
 packages:
 - datadog-agent
+- spruce
 templates:
   bin/collector_ctl: bin/collector_ctl
   bin/dogstatsd_ctl: bin/dogstatsd_ctl
@@ -11,6 +12,8 @@ templates:
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
+  helpers/merge_integrations_conf.sh: helpers/merge_integrations_conf.sh
+  helpers/generate_integrations_conf.sh: helpers/generate_integrations_conf.sh
 
 properties:
   api_key:
