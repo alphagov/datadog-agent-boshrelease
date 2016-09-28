@@ -57,16 +57,17 @@ instance_groups:
 
 ### Agent integrations
 
-Some Datadog integrations are configured in the agent: https://github.com/DataDog/dd-agent/tree/5.8.5/conf.d
-They might depend on "optional" dependencies in the agent: https://github.com/DataDog/dd-agent/blob/5.8.5/requirements-opt.txt
-The `datadog-agent` package installs these but some fail due to missing dependencies.
-These packages are skipped:
+Some [Datadog integrations are configured in the agent](https://github.com/DataDog/dd-agent/tree/5.8.5/conf.d).
+This release has support to configure them.
 
-* `pgbouncer` depends on `libpq`, which this release does not include
-* `ssh_check` depends on `winrandom-ctypes`, which will only install on Windows
-* `win32_event_log` and `wmi` will only work on Windows
+Note: These integrations depend on ["optional" dependencies in the agent](https://github.com/DataDog/dd-agent/blob/5.8.5/requirements-opt.txt).
+The `datadog-agent` package installs these but some fail due to missing dependencies. Currently these packages are not working:
 
-Configure integrations by embedding the YAML in the properties:
+  * `pgbouncer` depends on `libpq`, which this release does not include
+
+#### Configuring integrations adhoc in the manifest
+
+The end user can configure integrations by embedding the YAML in the properties:
 
 ```
 instance_groups:
@@ -85,6 +86,20 @@ instance_groups:
             thresholds:
               critical: [1, 9]
 ```
+
+#### Configuring integrations from 3rd party releases
+
+Third party releases might want to extend datadog agent to monitor local services using these additional checks.
+
+This release has logic to merge all files from jobs which follow this pattern:
+
+  ${JOB_PATH}/config/datadog-integrations/${checkname}.yaml
+
+For example:
+
+  /var/vcap/jobs/datadog-router/config/datadog-integrations/process.yaml
+
+The script will use [spruce](https://github.com/geofffranks/spruce) to merge all the configurations in one unique file per check, as datadog agent expects. Merging the config with spruces allows multiple jobs add configuration for some checks, for instance to monitor different processes. Additionally the release developer can use [the spruce syntax](https://github.com/geofffranks/spruce) if the need to, although default merge strategy is good enough.
 
 ## Development
 
