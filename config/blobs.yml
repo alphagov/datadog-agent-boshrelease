@@ -15,14 +15,6 @@ datadog-agent/get-pip.py:
   object_id: 5211ca17-6b2c-4d35-ba72-929b077e2827
   sha: 20da892e83c4f3ae8b523c8a3f8f4e29e935aef7
   size: 1524722
-datadog-agent/requirements-opt.txt:
-  object_id: 957fa648-9eb3-4673-b2da-391a64042c8d
-  sha: 069e5471ce75437a4427a79109cfd7cd4976a138
-  size: 1484
-datadog-agent/requirements.txt:
-  object_id: 0feec7b9-3ca9-4360-bafd-7d699be7edd5
-  sha: b76f6d06e38688f1f512952a9ed2b1ebcb7ece3d
-  size: 1926
 apt/python-dev/libexpat1-dev_2.1.0-4ubuntu1.3_amd64.deb:
   object_id: 6ee9956a-7645-46f6-9893-9c1255de9bde
   sha: 70b2766fb83200073459dab66709f14bbb8fef57
