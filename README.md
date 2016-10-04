@@ -55,6 +55,37 @@ instance_groups:
         service: myservice
 ```
 
+### Agent integrations
+
+Some Datadog integrations are configured in the agent: https://github.com/DataDog/dd-agent/tree/5.8.5/conf.d
+They might depend on "optional" dependencies in the agent: https://github.com/DataDog/dd-agent/blob/5.8.5/requirements-opt.txt
+The `datadog-agent` package installs these but some fail due to missing dependencies.
+These packages are skipped:
+
+* `pgbouncer` depends on `libpq`, which this release does not include
+* `ssh_check` depends on `winrandom-ctypes`, which will only install on Windows
+* `win32_event_log` and `wmi` will only work on Windows
+
+Configure integrations by embedding the YAML in the properties:
+
+```
+instance_groups:
+- name: myservice
+  jobs:
+  - name: datadog-agent
+    release: datadog-agent
+    properties:
+      integrations:
+        process:
+          init_config:
+            pid_cache_duration: 30
+          instances:
+          - name: myservice
+            search_string: ["myservice"]
+            thresholds:
+              critical: [1, 9]
+```
+
 ## Development
 
 As a developer of this release, create new releases and upload them:
