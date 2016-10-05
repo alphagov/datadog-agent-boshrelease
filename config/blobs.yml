@@ -59,3 +59,7 @@ apt/python-dev/python2.7_2.7.6-8ubuntu0.2_amd64.deb:
   object_id: 48a21a13-f31d-4794-9033-69cdb47dfe05
   sha: b87ff6940cd17466e867a5e1e6f70fbca14cfe0c
   size: 195822
+spruce/spruce:
+  object_id: a4b53617-9fb1-4085-b6dd-82b7783b7c9c
+  sha: 233fa7fc416e1213c63711eb7c3f0b94f000d131
+  size: 10594008
