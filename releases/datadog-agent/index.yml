@@ -6,4 +6,6 @@ builds:
     version: 5.8.5.1
   ff4de73d-e8b4-485d-9e24-add47a2b2b2f:
     version: 5.8.5.2
+  67c0708f-de84-42c7-8513-d108b6de6d9b:
+    version: 5.8.5.3
 format-version: '2'
