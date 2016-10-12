@@ -26,8 +26,19 @@ hostname: <%= p('hostname') %>
 <% end %>
 
 # Set the host's tags
-<% if p('tags').any? %>
-tags: <%= p('tags').map { |k, v| "#{k}:#{v}" }.join(', ') %>
+<%
+tags = {}
+if p('include_bosh_tags')
+    tags["bosh-job"] = spec.name if spec.name and not spec.name.empty?
+    tags["bosh-index"] = spec.index if spec.index
+    tags["bosh-az"] = spec.az if spec.az and not spec.az.empty?
+    tags["bosh-deployment"] = spec.deployment if spec.deployment and not spec.deployment.empty?
+end
+tags.merge!(p('tags'))
+
+if tags.any?
+%>
+tags: <%= tags.map { |k, v| "#{k}:#{v}" }.join(', ') %>
 <% end %>
 
 # Add one "dd_check:checkname" tag per running check. It makes it possible to slice
