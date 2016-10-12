@@ -28,6 +28,9 @@ properties:
   tags:
     default: {}
     description: A dictionary of tag names and values for categories that will be applied to the data sent from this agent.
+  include_bosh_tags:
+    description: Collect bosh spec metadata of the instance job, index and az. These can be overriden by setting them in tags.
+    default: false
   integrations:
     default: {}
     description: |
