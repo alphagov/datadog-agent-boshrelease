@@ -20,15 +20,27 @@ dd_url: https://app.datadoghq.com
 # https://app.datadoghq.com/account/settings
 api_key: <%= p('api_key') %>
 
-<% if_p('hostname') do %>
 # Force the hostname to whatever you want.
-hostname: <%= p('hostname') %>
+<%
+hostname = nil
+if_p('use_bosh_hostname') do |h|
+    hostname = "#{spec.name || 'unknown'}.#{spec.index || '0'}"
+end
+if_p('hostname') do |h|
+    hostname = h
+end
+
+if hostname
+%>
+hostname: <%= hostname %>
 <% end %>
 
+# <%= spec %>
 # Set the host's tags
 <%
 tags = {}
 if p('include_bosh_tags')
+    tags["bosh-id"] = spec.id if spec.id and not spec.id.empty?
     tags["bosh-job"] = spec.name if spec.name and not spec.name.empty?
     tags["bosh-index"] = spec.index if spec.index
     tags["bosh-az"] = spec.az if spec.az and not spec.az.empty?

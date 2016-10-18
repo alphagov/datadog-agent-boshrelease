@@ -22,6 +22,9 @@ properties:
     description: Collect AWS EC2 custom tags as agent tags (requires an IAM role associated with the instance)
   hostname:
     description: Hostname as it should be displayed within datadog. Optional.
+  use_bosh_hostname:
+    description: When enabled, set Hostname as it should be displayed in datadog as $jobname.$index (e.g router.0).
+    default: false
   use_dogstatsd:
     default: yes
     description: Should the dogstatsd agent be started
@@ -29,7 +32,7 @@ properties:
     default: {}
     description: A dictionary of tag names and values for categories that will be applied to the data sent from this agent.
   include_bosh_tags:
-    description: Collect bosh spec metadata of the instance job, index and az. These can be overriden by setting them in tags.
+    description: Collect bosh spec metadata of the instance id, job, index and az. These can be overriden by setting them in tags.
     default: false
   integrations:
     default: {}
