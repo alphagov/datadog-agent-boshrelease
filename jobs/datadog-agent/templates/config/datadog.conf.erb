@@ -35,16 +35,16 @@ if hostname
 hostname: <%= hostname %>
 <% end %>
 
-# <%= spec %>
 # Set the host's tags
 <%
 tags = {}
 if p('include_bosh_tags')
-    tags["bosh-id"] = spec.id if spec.id and not spec.id.empty?
-    tags["bosh-job"] = spec.name if spec.name and not spec.name.empty?
-    tags["bosh-index"] = spec.index if spec.index
-    tags["bosh-az"] = spec.az if spec.az and not spec.az.empty?
-    tags["bosh-deployment"] = spec.deployment if spec.deployment and not spec.deployment.empty?
+    bosh_tags_prefix=p('bosh_tags_prefix')
+    tags["#{bosh_tags_prefix}id"] = spec.id if spec.id and not spec.id.empty?
+    tags["#{bosh_tags_prefix}job"] = spec.name if spec.name and not spec.name.empty?
+    tags["#{bosh_tags_prefix}index"] = spec.index if spec.index
+    tags["#{bosh_tags_prefix}az"] = spec.az if spec.az and not spec.az.empty?
+    tags["#{bosh_tags_prefix}deployment"] = spec.deployment if spec.deployment and not spec.deployment.empty?
 end
 tags.merge!(p('tags'))
 
