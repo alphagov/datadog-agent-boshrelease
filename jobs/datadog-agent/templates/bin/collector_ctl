@@ -18,6 +18,7 @@ case $1 in
     cp $JOB_DIR/config/datadog.conf "$AGENT_DIR/"
     bash $JOB_DIR/helpers/generate_integrations_conf.sh
     bash $JOB_DIR/helpers/merge_integrations_conf.sh
+    bash $JOB_DIR/helpers/collect_custom_checks.sh
 
     export PYTHONPATH="$AGENT_DIR/checks/libs:$PYTHONPATH"
     export LANG=POSIX
