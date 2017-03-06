@@ -24,13 +24,13 @@ api_key: <%= p('api_key') %>
 <%
 hostname = nil
 if p('use_bosh_hostname')
-    hostname = "#{spec.name || 'unknown'}.#{spec.index || '0'}"
+  hostname = "#{[spec.deployment, spec.name, spec.index].join('.')}"
 end
 if_p('hostname') do |h|
     hostname = h
 end
 
-if hostname
+if hostname && !hostname.empty?
 %>
 hostname: <%= hostname %>
 <% end %>
