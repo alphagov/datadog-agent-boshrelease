@@ -101,6 +101,18 @@ For example:
 
 The script will use [spruce](https://github.com/geofffranks/spruce) to merge all the configurations in one unique file per check, as datadog agent expects. Merging the config with spruces allows multiple jobs add configuration for some checks, for instance to monitor different processes. Additionally the release developer can use [the spruce syntax](https://github.com/geofffranks/spruce) if the need to, although default merge strategy is good enough.
 
+#### Using custom checks from 3rd party releases
+
+This release has built-in logic that collects custom datadog checks from 3rd party releases and copies them to `checks.d` directory of the datadog agent. Configuration for these custom checks is transferred/merged using logic described above in [Configuring integrations from 3rd party releases]. The custom checks are collected from this path in the releases:
+
+  ${JOB_PATH}/config/datadog-integrations/${checkname}.py
+
+E.g.
+
+  /var/vcap/jobs/datadog-bbs/config/datadog-integrations/bbs_check.py
+
+If there happen to be two custom checks with the same name, script will abort startup, causing BOSH to fail deploying this job. This is because checks are written in python and are not easily mergable like yaml files. Overwritting checks is not desired, nor is silent failure.
+
 ## Development
 
 As a developer of this release, create new releases and upload them:
