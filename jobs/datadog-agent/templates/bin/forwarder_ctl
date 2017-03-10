@@ -3,30 +3,40 @@
 set -e # exit immediately if a simple command exits with a non-zero status
 
 # Setup env vars and folders for the webapp_ctl script
+# shellcheck source=/dev/null
 source /var/vcap/jobs/datadog-agent/helpers/ctl_setup.sh 'datadog-agent'
 
 export PORT=${PORT:-5000}
 export LANG=en_US.UTF-8
 PIDFILE=$RUN_DIR/forwarder.pid
 
+ensure_log_file_owned_by_vcap() {
+  if [ -e "$LOG_DIR/forwarder.log" ]
+  then
+    chown vcap:vcap "$LOG_DIR/forwarder.log"
+  fi
+}
+
 case $1 in
 
   start)
-    pid_guard $PIDFILE $JOB_NAME
+    pid_guard "$PIDFILE" "$JOB_NAME"
 
     # store pid in $PIDFILE
-    echo $$ > $PIDFILE
+    echo $$ > "$PIDFILE"
 
-    cp $JOB_DIR/config/datadog.conf "$AGENT_DIR/"
+    cp "$JOB_DIR/config/datadog.conf" "$AGENT_DIR/"
+
+    ensure_log_file_owned_by_vcap
 
     exec chpst -u vcap:vcap \
       python "$AGENT_DIR/ddagent.py" --use_simple_http_client=1 \
-      >>$LOG_DIR/forwarder.log 2>&1
+      >>"$LOG_DIR/forwarder.log" 2>&1
 
     ;;
 
   stop)
-    kill_and_wait $PIDFILE
+    kill_and_wait "$PIDFILE"
 
     ;;
   *)
