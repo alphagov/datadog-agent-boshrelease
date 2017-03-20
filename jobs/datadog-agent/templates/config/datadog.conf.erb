@@ -23,7 +23,7 @@ api_key: <%= p('api_key') %>
 # Force the hostname to whatever you want.
 <%
 hostname = nil
-if_p('use_bosh_hostname') do |h|
+if p('use_bosh_hostname')
     hostname = "#{spec.name || 'unknown'}.#{spec.index || '0'}"
 end
 if_p('hostname') do |h|
