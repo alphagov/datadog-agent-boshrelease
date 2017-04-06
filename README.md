@@ -103,13 +103,13 @@ The script will use [spruce](https://github.com/geofffranks/spruce) to merge all
 
 #### Using custom checks from 3rd party releases
 
-This release has built-in logic that collects custom datadog checks from 3rd party releases and copies them to `checks.d` directory of the datadog agent. Configuration for these custom checks is transferred/merged using logic described above in [Configuring integrations from 3rd party releases]. The custom checks are collected from this path in the releases:
+This release has built-in logic that collects custom datadog checks from 3rd party releases and copies them to `checks.d` directory of the datadog agent. Configuration for these custom checks is transferred/merged using logic described above in [Configuring integrations from 3rd party releases](#configuring-integrations-from-3rd-party-releases). The custom checks are collected from this path in the releases:
 
-  ${JOB_PATH}/config/datadog-integrations/${checkname}.py
+    ${JOB_PATH}/config/datadog-integrations/${checkname}.py
 
 E.g.
 
-  /var/vcap/jobs/datadog-bbs/config/datadog-integrations/bbs_check.py
+    /var/vcap/jobs/datadog-bbs/config/datadog-integrations/bbs_check.py
 
 If there happen to be two custom checks with the same name, script will abort startup, causing BOSH to fail deploying this job. This is because checks are written in python and are not easily mergable like yaml files. Overwritting checks is not desired, nor is silent failure.
 
