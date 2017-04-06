@@ -27,7 +27,7 @@ if p('use_bosh_hostname')
   hostname = "#{[spec.deployment, spec.name, spec.index].join('.')}"
 end
 if_p('hostname') do |h|
-    hostname = h
+  hostname = h
 end
 
 if hostname && !hostname.empty?
