@@ -18,6 +18,7 @@ case $1 in
     echo $$ > $PIDFILE
 
     cp $JOB_DIR/config/datadog.conf "$AGENT_DIR/"
+    chown vcap:vcap "$AGENT_DIR/datadog.conf"
 
     exec chpst -u vcap:vcap \
       python "$AGENT_DIR/dogstatsd.py" --use-local-forwarder \
