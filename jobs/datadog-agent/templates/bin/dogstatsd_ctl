@@ -9,6 +9,14 @@ export PORT=${PORT:-5000}
 export LANG=en_US.UTF-8
 PIDFILE=$RUN_DIR/dogstatsd.pid
 
+ensure_log_file_owned_by_vcap() {
+  # Make sure the dogstatsd.log file exists otherwise it will be created
+  # with owner root:root when dogstatsd.py is started the first time.
+  # The output redirection is not affected by chpst.
+  [ -e "$LOG_DIR/dogstatsd.log" ] || touch "$LOG_DIR/dogstatsd.log"
+  chown vcap:vcap "$LOG_DIR/dogstatsd.log"
+}
+
 case $1 in
 
   start)
@@ -18,6 +26,9 @@ case $1 in
     echo $$ > $PIDFILE
 
     cp $JOB_DIR/config/datadog.conf "$AGENT_DIR/"
+    chown vcap:vcap "$AGENT_DIR/datadog.conf"
+
+    ensure_log_file_owned_by_vcap
 
     exec chpst -u vcap:vcap \
       python "$AGENT_DIR/dogstatsd.py" --use-local-forwarder \

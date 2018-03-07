@@ -11,10 +11,11 @@ export LANG=en_US.UTF-8
 PIDFILE=$RUN_DIR/forwarder.pid
 
 ensure_log_file_owned_by_vcap() {
-  if [ -e "$LOG_DIR/forwarder.log" ]
-  then
-    chown vcap:vcap "$LOG_DIR/forwarder.log"
-  fi
+  # Make sure the forwarder.log file exists otherwise it will be created
+  # with owner root:root when ddagent.py is started the first time.
+  # The output redirection is not affected by chpst.
+  [ -e "$LOG_DIR/forwarder.log" ] || touch "$LOG_DIR/forwarder.log"
+  chown vcap:vcap "$LOG_DIR/forwarder.log"
 }
 
 case $1 in
@@ -26,6 +27,7 @@ case $1 in
     echo $$ > "$PIDFILE"
 
     cp "$JOB_DIR/config/datadog.conf" "$AGENT_DIR/"
+    chown vcap:vcap "$AGENT_DIR/datadog.conf"
 
     ensure_log_file_owned_by_vcap
 
