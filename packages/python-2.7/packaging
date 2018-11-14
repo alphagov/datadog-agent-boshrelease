@@ -1,0 +1,44 @@
+set -e
+
+echo "Copying compile.env..."
+mkdir ${BOSH_INSTALL_TARGET}/bosh
+cp python-2.7/runtime.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env
+cp python-2.7/compile.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
+
+echo "Extracting python..."
+tar xzvf python-2.7/Python-2.7.15.tgz
+
+echo "Building python..."
+pushd Python-2.7.15
+  ./configure --prefix=$BOSH_INSTALL_TARGET
+  make
+  make install
+popd
+
+echo "Extracting setuptools..."
+unzip python-2.7/setuptools-40.6.2.zip
+
+echo "Creating the setuptools site packages..."
+mkdir -p $BOSH_INSTALL_TARGET/lib/python2.7/site-packages
+
+echo "Setting the PYTHONPATH with setuptools site packages..."
+export PYTHONPATH=$BOSH_INSTALL_TARGET/lib/python2.7/site-packages:$PYTHONPATH
+
+echo "Installing setuptools..."
+pushd setuptools-40.6.2
+  /var/vcap/packages/python-2.7/bin/python setup.py install --prefix=$BOSH_INSTALL_TARGET
+popd
+
+echo "Extracting pip..."
+tar xzvf python-2.7/pip-18.1.tar.gz
+
+echo "Creating the pip site packages..."
+mkdir -p $BOSH_INSTALL_TARGET/lib/python2.7/site-packages
+
+echo "Setting the PYTHONPATH with setuptools and pip site packages..."
+export PYTHONPATH=$BOSH_INSTALL_TARGET/lib/python2.7/site-packages:$PYTHONPATH
+
+echo "Installing pip..."
+pushd pip-18.1
+  /var/vcap/packages/python-2.7/bin/python setup.py install --prefix=$BOSH_INSTALL_TARGET
+popd

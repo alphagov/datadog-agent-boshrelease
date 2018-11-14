@@ -12,4 +12,5 @@ export JOB_FULL="$NAME/$JOB_INDEX"
 export AGENT_DIR="$JOB_DIR/packages/datadog-agent/agent"
 
 export PATH="$JOB_DIR/packages/datadog-agent/venv/bin:$PATH"
+source $JOB_DIR/packages/python-2.7/bosh/compile.env
 source $JOB_DIR/packages/datadog-agent/venv/bin/activate
