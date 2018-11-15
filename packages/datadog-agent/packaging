@@ -9,31 +9,74 @@ DEPENDENCY_DIR="$(cd $BOSH_INSTALL_TARGET/.. && pwd)"
 
 AGENT_VERSION="5.8.5"
 DD_START_AGENT=0
-PIP_VERSION=6.1.1
-SETUPTOOLS_VERSION=20.9.0
 VIRTUALENV_VERSION="1.11.6"
 
-mkdir -p $BOSH_INSTALL_TARGET/venv
-python datadog-agent/virtualenv-$VIRTUALENV_VERSION.py --no-pip --no-setuptools $BOSH_INSTALL_TARGET/venv
-source $BOSH_INSTALL_TARGET/venv/bin/activate
+# Curl is required for pycurl
+# wget https://curl.haxx.se/download/curl-7.62.0.tar.gz
+(
+tar -xzvf ./datadog-agent/curl-7.62.0.tar.gz
+cd curl-7.62.0
+./configure --prefix=${BOSH_INSTALL_TARGET}
+make -j${CPUS}
+make install
+)
 
-source $DEPENDENCY_DIR/python-dev/profile.sh
+# wget -nc ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
+(
+tar -xzvf ./datadog-agent/libffi-3.2.1.tar.gz
+cd libffi-3.2.1
+./configure --prefix=${BOSH_INSTALL_TARGET}
+make -j${CPUS}
+make install
+)
+
+# We need pkg-config to get the python libraries finding the right
+# path for includes and libraries.
+#
+# https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
+(
+tar -xzvf ./datadog-agent/pkg-config-0.29.2.tar.gz
+cd pkg-config-0.29.2
+./configure --prefix=${BOSH_INSTALL_TARGET} --with-internal-glib
+make -j${CPUS}
+make install
+)
+
+export PKG_CONFIG_PATH=${BOSH_INSTALL_TARGET}/lib/pkgconfig/
+
+source /var/vcap/packages/python-2.7/bosh/compile.env
+
+export PATH="$PATH:${BOSH_INSTALL_TARGET}/bin"
+export INCLUDE_PATH="${INCLUDE_PATH:+${INCLUDE_PATH}:}${BOSH_INSTALL_TARGET}/include"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}${BOSH_INSTALL_TARGET}/lib"
+
+pip install 'virtualenv==16.1.0' \
+    --no-index --find-links=./datadog-agent
+
+virtualenv $BOSH_INSTALL_TARGET/venv
+source $BOSH_INSTALL_TARGET/venv/bin/activate
 
 VENV_PYTHON_CMD="$BOSH_INSTALL_TARGET/venv/bin/python"
 VENV_PIP_CMD="$BOSH_INSTALL_TARGET/venv/bin/pip"
 
-$VENV_PYTHON_CMD datadog-agent/ez_setup.py --version="$SETUPTOOLS_VERSION" --to-dir=$BOSH_INSTALL_TARGET
-$VENV_PYTHON_CMD datadog-agent/get-pip.py
-$VENV_PIP_CMD install "pip==$PIP_VERSION" --global-option=build_ext --global-option="-I$INCLUDE_PATH" --global-option="-L$LD_LIBRARY_PATH"
-$VENV_PIP_CMD install -r datadog-agent/requirements.txt --global-option=build_ext --global-option="-I$INCLUDE_PATH" --global-option="-L$LD_LIBRARY_PATH"
-$VENV_PIP_CMD install -r datadog-agent/requirements-opt.txt --global-option=build_ext --global-option="-I$INCLUDE_PATH" --global-option="-L$LD_LIBRARY_PATH"
-
-rm -f "$BOSH_INSTALL_TARGET/setuptools-$SETUPTOOLS_VERSION.zip"
-rm -f "$BOSH_INSTALL_TARGET/ez_setup.py"
-rm -f "$BOSH_INSTALL_TARGET/ez_setup.pyc"
-rm -f "$BOSH_INSTALL_TARGET/get-pip.py"
-rm -f "$BOSH_INSTALL_TARGET/get-pip.pyc"
-rm -f "$BOSH_INSTALL_TARGET/requirements.txt"
+$VENV_PIP_CMD install 'urllib3[secure]==1.24.1' \
+    --no-index --find-links=./datadog-agent \
+    --build /var/vcap/data/tmp/ \
+    --global-option=build_ext \
+    --global-option="-I$INCLUDE_PATH" \
+    --global-option="-L$LD_LIBRARY_PATH"
+$VENV_PIP_CMD install -r datadog-agent/requirements.txt \
+    --no-index --find-links=./datadog-agent \
+    --build /var/vcap/data/tmp/ \
+    --global-option=build_ext \
+    --global-option="-I$INCLUDE_PATH" \
+    --global-option="-L$LD_LIBRARY_PATH"
+$VENV_PIP_CMD install -r datadog-agent/requirements-opt.txt\
+    --no-index --find-links=./datadog-agent \
+    --build /var/vcap/data/tmp/ \
+    --global-option=build_ext \
+    --global-option="-I$INCLUDE_PATH" \
+    --global-option="-L$LD_LIBRARY_PATH"
 
 mkdir -p $BOSH_INSTALL_TARGET/agent
 tar xzf datadog-agent/agent.tar.gz -C $BOSH_INSTALL_TARGET/agent --strip-components 1

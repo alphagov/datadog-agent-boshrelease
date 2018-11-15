@@ -1,65 +1,272 @@
----
-datadog-agent/virtualenv-1.11.6.py:
-  object_id: 5fe339bd-9bc2-4112-a6e3-bc6c013c5e9b
-  sha: a506a836ef76301bc19e5a209984a4286529a79b
-  size: 98477
+datadog-agent/PyMySQL-0.6.6.tar.gz:
+  size: 56862
+  object_id: 86194b70-b611-496c-7d91-ff21c780c82b
+  sha: 63098543f056951f6ba54cb4e560ce4efa755fc3
+datadog-agent/PyYAML-3.11.tar.gz:
+  size: 248685
+  object_id: d63eb88b-3751-4e49-5ea6-b398dcb328c9
+  sha: 1a2d5df8b31124573efb9598ec6d54767f3c4cd4
+datadog-agent/Pyro4-4.74.tar.gz:
+  size: 470762
+  object_id: a333ecb7-d316-4d01-4de0-3ed35d5fa630
+  sha: 526b5acf260d95a75e1507e6f646659d5c416576
+datadog-agent/adodbapi-2.6.0.7.zip:
+  size: 335598
+  object_id: 0ecd936b-e0d6-40a7-55f1-e67f1995ffe6
+  sha: 3db954f1193db07cc1aabd8d352e7d890a55df13
 datadog-agent/agent.tar.gz:
+  size: 7112750
   object_id: f10d0d4f-1867-4f0c-a0b9-c2ec1638cab6
   sha: 470b815e4cfc087e29bce6037456326fe916726e
-  size: 7112750
+datadog-agent/argparse-1.4.0.tar.gz:
+  size: 70508
+  object_id: 55c3ae26-a3d3-417a-580a-911add08fb82
+  sha: 50f36429b2989461ee541093e7229257ee950c07
+datadog-agent/asn1crypto-0.24.0.tar.gz:
+  size: 104964
+  object_id: 40efaa5b-c70c-4709-509e-d1be041acece
+  sha: c8f64e99bc01d90c412891cdad97675d8fe79cc7
+datadog-agent/backports.ssl_match_hostname-3.5.0.1.tar.gz:
+  size: 5605
+  object_id: 1b1f4d33-fff0-41c9-4a35-ed6b3d932927
+  sha: 0567c136707a5f53b95aa793b79cc8d5c61d8e22
+datadog-agent/boto-2.39.0.tar.gz:
+  size: 1434775
+  object_id: 907a2fa9-941f-4125-4fc0-da2d27962bc0
+  sha: e6cd7a9c48852bcc982f1dd35a5475ac6965dc47
+datadog-agent/certifi-2018.10.15.tar.gz:
+  size: 145887
+  object_id: 8ff7f241-f930-4c2b-654c-31ecedc58226
+  sha: 73eb43fcb367b3d2bd346d99df89e911da7fee05
+datadog-agent/cffi-1.11.5.tar.gz:
+  size: 438498
+  object_id: dfa96180-a818-4893-68df-272a47b7c80d
+  sha: 1686e6689a691414d3d22626c837adeee3996dd9
+datadog-agent/cryptography-2.4.1.tar.gz:
+  size: 468551
+  object_id: fd9f29fb-f95d-4a66-7cee-cd542f14fe0a
+  sha: 40dd9d731aeabb635b3cb36d0b6cbd97c2f42495
+datadog-agent/curl-7.62.0.tar.gz:
+  size: 4045208
+  object_id: 4be92db7-3248-4b8a-4beb-35bca5fff848
+  sha: 0db6f8129e556fdb4257d7271942293b1b00889f
+datadog-agent/dnspython-1.12.0.zip:
+  size: 230499
+  object_id: 17e3a672-36b3-4d07-72e1-ffe41fa9760c
+  sha: e1d81af983d37c5478fe04694b78014b46210c5e
+datadog-agent/docker-py-1.8.1.tar.gz:
+  size: 71968
+  object_id: 7ac80aee-aeba-478a-49cf-110631e331cb
+  sha: c0a42080de6a11b6fed16a530f16761f6da9eb19
+datadog-agent/ecdsa-0.13.tar.gz:
+  size: 55579
+  object_id: fc54a1f2-787c-4c53-629a-7576786dc9c0
+  sha: 7bcf6d1773d08bcc4bdd28cd05c545969f5aa162
+datadog-agent/enum34-1.1.6.tar.gz:
+  size: 40048
+  object_id: 6d94d32b-ba83-4499-4a67-f069d3f217e2
+  sha: 014ef5878333ff91099893d615192c8cd0b1525a
 datadog-agent/ez_setup.py:
+  size: 12402
   object_id: dc2d372d-0f51-4447-a2ed-b1960f3c58eb
   sha: 6f4ad84d852b9eb3132035cfd88dbd212714a48c
-  size: 12402
+datadog-agent/gearman-2.0.2.tar.gz:
+  size: 28355
+  object_id: 4957b1f0-6b67-45a2-7924-fb3244c7f5a9
+  sha: 071d4999babfd738a2c538d7fa67245ddaf45b3a
 datadog-agent/get-pip.py:
+  size: 1524722
   object_id: 5211ca17-6b2c-4d35-ba72-929b077e2827
   sha: 20da892e83c4f3ae8b523c8a3f8f4e29e935aef7
-  size: 1524722
-apt/python-dev/libexpat1-dev_2.1.0-4ubuntu1.3_amd64.deb:
-  object_id: 6ee9956a-7645-46f6-9893-9c1255de9bde
-  sha: 70b2766fb83200073459dab66709f14bbb8fef57
-  size: 115202
-apt/python-dev/libexpat1_2.1.0-4ubuntu1.3_amd64.deb:
-  object_id: 3c144009-5eb5-4a4a-8948-ef93c5f46f2e
-  sha: b9a62f58c76a4f917defef9b0bce2a15197306ac
-  size: 71134
-apt/python-dev/libpython-dev_2.7.5-5ubuntu3_amd64.deb:
-  object_id: 15812c5d-d189-4c17-b9c2-3fb27cb62421
-  sha: 8ea63c31b460a972f230e89deddde1a1cc978317
-  size: 7078
-apt/python-dev/libpython2.7-dev_2.7.6-8ubuntu0.2_amd64.deb:
-  object_id: abd0605f-33de-4610-87d5-a106bc3c5227
-  sha: ed8980613989d581af60c30ec5c97384c3e5d44f
-  size: 22007718
-apt/python-dev/libpython2.7-minimal_2.7.6-8ubuntu0.2_amd64.deb:
-  object_id: d7b1c38e-8aa4-437e-9a04-aac64997036e
-  sha: d8dcfb156026bbf451502eef0fc0376fa3fabefc
-  size: 307916
-apt/python-dev/libpython2.7-stdlib_2.7.6-8ubuntu0.2_amd64.deb:
-  object_id: ccd4d6ff-9858-43ed-81cc-850d7e602fed
-  sha: b3a639145df0e1fd76a98cb4c6f1ac08f2c4de2f
-  size: 1869374
-apt/python-dev/libpython2.7_2.7.6-8ubuntu0.2_amd64.deb:
-  object_id: 1e291ab2-c6a5-4726-8540-e2dd937c6b9c
-  sha: 2660bd56f54a2601d227bd4a43641db7d8e2bfcc
-  size: 1038642
-apt/python-dev/python-dev_2.7.5-5ubuntu3_amd64.deb:
-  object_id: f06b0c4c-2f81-496d-a4a5-0a8f278e1b01
-  sha: 13e6be388dae2131d3ac6c17242fe28f2d6b6b3d
-  size: 1166
-apt/python-dev/python2.7-dev_2.7.6-8ubuntu0.2_amd64.deb:
-  object_id: c776461c-77bc-42db-8849-4865b3b4c0d3
-  sha: 3239f647321900abf034bed6be6bac2f66158954
-  size: 269106
-apt/python-dev/python2.7-minimal_2.7.6-8ubuntu0.2_amd64.deb:
-  object_id: 5ceb380e-7890-439f-aea6-af4caa06fa8f
-  sha: 984bfe30245a2e757341b0c9abb16f97ae51b0b8
-  size: 1185096
-apt/python-dev/python2.7_2.7.6-8ubuntu0.2_amd64.deb:
-  object_id: 48a21a13-f31d-4794-9033-69cdb47dfe05
-  sha: b87ff6940cd17466e867a5e1e6f70fbca14cfe0c
-  size: 195822
+datadog-agent/httplib2-0.9.tar.gz:
+  size: 204584
+  object_id: c40f4e5f-cbc1-42fd-6e7e-93c9add58cdf
+  sha: 1b9774a81136a222f02e711d81efb775dc87b70e
+datadog-agent/idna-2.7.tar.gz:
+  size: 172698
+  object_id: 7c002c7c-7599-4d42-72c6-f79a214420c4
+  sha: 9e1aec32b35423438c285ec21ee234228bedd6fb
+datadog-agent/ipaddress-1.0.22.tar.gz:
+  size: 33051
+  object_id: ebefb3f8-b9c4-4254-7723-9387ae070b33
+  sha: 7b60cef3c7fdb7fa9c991ddff5968754cec6adb0
+datadog-agent/kafka-python-0.9.3.tar.gz:
+  size: 52783
+  object_id: 1cba5bfc-4dfd-44fd-484a-742c783dfd96
+  sha: 1e0046673d58a44fc1118cf5e070c5d598b79f64
+datadog-agent/kazoo-1.3.1.zip:
+  size: 138816
+  object_id: 66238a95-1e7f-4aa0-43e3-4be043a18a5a
+  sha: 893d050c567655fe084ec650e72cd6f2bc2cfd51
+datadog-agent/libffi-3.2.1.tar.gz:
+  size: 940837
+  object_id: 40594ef5-328d-4d52-7f45-f900d2091981
+  sha: 280c265b789e041c02e5c97815793dfc283fb1e6
+datadog-agent/meld3-1.0.2.tar.gz:
+  size: 36478
+  object_id: abd399a0-35fa-4188-5c2c-e4c29665da21
+  sha: 01e90ab9a97b68a202e95d4460e4bcea3d929495
+datadog-agent/ntplib-0.3.3.tar.gz:
+  size: 6808
+  object_id: 59fe31dc-b925-41db-4eca-3ac7f8353e39
+  sha: 403ac0cc01398bacdf608d4aa35e74e36f5ad64d
+datadog-agent/paramiko-1.15.2.tar.gz:
+  size: 1220578
+  object_id: 7add10ee-e140-4891-5f70-6b016935232e
+  sha: 754ffa47fd6f78b93fc56437cf14a79bef094f0f
+datadog-agent/pg8000-1.10.1.tar.gz:
+  size: 39072
+  object_id: e1c153fe-b514-4a1b-5f36-8b7daae36844
+  sha: ff142058446ff50dc4a48abb62d3528039739c6e
+datadog-agent/pip-18.1.tar.gz:
+  size: 1259370
+  object_id: f38c9cbc-4a80-48cf-593a-69d42cd09d48
+  sha: 1226368a8d39bd8b945517b6f7cb9802b279564e
+datadog-agent/pkg-config-0.29.2.tar.gz:
+  size: 2016830
+  object_id: dc2f7aec-b4bc-4b2e-4077-bd660b658d4b
+  sha: 76e501663b29cb7580245720edfb6106164fad2b
+datadog-agent/protobuf-3.6.1.tar.gz:
+  size: 240927
+  object_id: ca795ea2-889d-485e-4773-722c512c9504
+  sha: 34e4719103d0979fa157e5d3a7574c7d99df9085
+datadog-agent/psutil-3.3.0.tar.gz:
+  size: 261983
+  object_id: 486f43c1-3dae-4b11-4f14-2f43d553f16a
+  sha: d374683550eb8e38617bd8330f5aa303f6f2c896
+datadog-agent/pyOpenSSL-18.0.0.tar.gz:
+  size: 167296
+  object_id: 69070009-22f0-4fde-69d8-cea886e220ae
+  sha: a41b82512585dd05a5370fb737f4eb4119030a38
+datadog-agent/pyasn1-0.4.4.tar.gz:
+  size: 118725
+  object_id: bf90078c-bdb0-420e-6243-af8d2b7bf87f
+  sha: 10f67e61e30c064301c826c6e5e461ff7bf5827d
+datadog-agent/pycparser-2.19.tar.gz:
+  size: 158295
+  object_id: 95fb2dab-acae-4be2-40ff-f94252827bbb
+  sha: a69ccf20b014709aeabdc4ec39f2f66e6a526a59
+datadog-agent/pycrypto-2.6.1.tar.gz:
+  size: 446240
+  object_id: a9e9183f-7156-4da4-6b61-7034c69f058f
+  sha: aeda3ed41caf1766409d4efc689b9ca30ad6aeb2
+datadog-agent/pycurl-7.19.5.1.tar.gz:
+  size: 142140
+  object_id: 3953c65a-b85a-48a6-46d4-37d191b46423
+  sha: e448cc05ef05f8645bb9a7873d7a7e0b0035db14
+datadog-agent/pymongo-3.2.tar.gz:
+  size: 473631
+  object_id: 8356497d-8387-4e41-6dbd-1653e510cabd
+  sha: 1e9bf461dad709148fed4faf2d93aaf5fc30ab79
+datadog-agent/pysnmp-4.2.5.tar.gz:
+  size: 225014
+  object_id: b6217614-6e7e-4ab8-6f24-0f0a366f8661
+  sha: 4a74ec969c57c146b53b8d496df182d69674871c
+datadog-agent/pysnmp-mibs-0.1.4.tar.gz:
+  size: 1982745
+  object_id: bf28a6c8-c8b6-4c10-4088-3230a486a9dd
+  sha: a1c0c83815422f0b1f1afe5e454e6618cb2f9bc2
+datadog-agent/python-consul-0.4.7.tar.gz:
+  size: 18333
+  object_id: 546c937c-6d71-401d-583a-c06ac3959fdd
+  sha: 2c92273da976a7e1b12d19f4d1b75401db58b8d0
+datadog-agent/python-etcd-0.4.2.tar.gz:
+  size: 29564
+  object_id: bda1f719-d14d-496e-7941-b0dbae1c65ba
+  sha: 680b368853d95a6e229ad9cd6bfa2e5297d76393
+datadog-agent/python-memcached-1.53.tar.gz:
+  size: 20631
+  object_id: 9afa1982-feea-4afe-6193-0db0557e1688
+  sha: 82a0c3721b75ee6543e8ac7fa001d24efe4ad2bf
+datadog-agent/pyvmomi-6.0.0.tar.gz:
+  size: 216134
+  object_id: ef8e092b-08aa-4844-7854-260534085a24
+  sha: 46c824a165f9469c82bc280b0f42a3d72ccc2cd8
+datadog-agent/redis-2.10.3.tar.gz:
+  size: 86532
+  object_id: c7f29769-4643-4d96-5fd9-52d2b62de82f
+  sha: ac04557477e4eeefcb0a5ddeb32138bd08826b0f
+datadog-agent/requests-2.6.0.tar.gz:
+  size: 450389
+  object_id: 72f423b1-4160-4d22-6844-43839e10953c
+  sha: ad7327c73e8be8c188ad489d511097202b1fef12
+datadog-agent/scandir-1.2.tar.gz:
+  size: 25206
+  object_id: 67b350ce-154a-4c19-669b-cbf42608c47f
+  sha: 0e6a843f1a83a579845ced0dc786e9b5556dca65
+datadog-agent/selectors34-1.2.tar.gz:
+  size: 10145
+  object_id: 9ae66e74-4cba-4e71-6fe3-fd8197ed2f97
+  sha: 49371c6fbe37ef94c4f7adbc0ec59aca6c1c5d08
+datadog-agent/serpent-1.27.tar.gz:
+  size: 12758
+  object_id: 8b6191f3-57fb-4512-7184-fa7c2cd995f4
+  sha: d31860b08be0c217e8717d02c574216c4f10bf46
+datadog-agent/setuptools-40.6.2.zip:
+  size: 839184
+  object_id: 7eeb22bd-e770-4268-74a0-bd92e92d330f
+  sha: 49f14096136fbecdbdf700ba1a95c20fc772187f
+datadog-agent/simplejson-3.6.5.tar.gz:
+  size: 73961
+  object_id: eba74e86-3bae-4d72-61df-8ef607baf26c
+  sha: 4e3f2557fc8003115cf5d9c388845c03aec83121
+datadog-agent/six-1.11.0.tar.gz:
+  size: 29860
+  object_id: 56d1fe60-77d4-4f29-4e8b-b99d5ca26563
+  sha: 3647372a0e104e7b53bd477762392024e1083ac0
+datadog-agent/snakebite-1.3.11.tar.gz:
+  size: 62542
+  object_id: 3a8a74e0-8119-48f9-68d8-a94eff7df5fd
+  sha: 2714aa8963c916aae5e5bcb846f12e99a1ae5271
+datadog-agent/supervisor-3.3.0.tar.gz:
+  size: 416329
+  object_id: ce524e4c-4cae-48bc-69e3-97b6000b21e3
+  sha: 7f6338b54e5a3bd489be7d62305eda9c465b0e5f
+datadog-agent/tornado-3.2.2.tar.gz:
+  size: 405596
+  object_id: 56a5ba87-c6ec-4371-541a-5136554e7bc4
+  sha: ede9603adcceaf1b6085fd5a973cec50c7391888
+datadog-agent/uptime-3.0.1.tar.gz:
+  size: 6630
+  object_id: ac7acfdf-41fc-47c4-4087-7a545eaec4bd
+  sha: d52dcfd7b13bf058b2918ad12e532be6662c252a
+datadog-agent/urllib3-1.24.1.tar.gz:
+  size: 229688
+  object_id: d606edf9-d805-4bed-649e-3eae0acead34
+  sha: 2d5593e48a650e4ba05358c7d2de865684001948
+datadog-agent/virtualenv-1.11.6.py:
+  size: 98477
+  object_id: 5fe339bd-9bc2-4112-a6e3-bc6c013c5e9b
+  sha: a506a836ef76301bc19e5a209984a4286529a79b
+datadog-agent/virtualenv-16.1.0.tar.gz:
+  size: 1977229
+  object_id: e07706a0-45e2-441b-41ab-dc7f6b6226f7
+  sha: d779e0413ac7b69900fdc0bf26516c9f35605a9b
+datadog-agent/websocket_client-0.54.0.tar.gz:
+  size: 36413
+  object_id: a84d5494-b8f4-4466-4a8a-32f357a75c48
+  sha: 4ffb81e4dcae90f4959450f04efbc9ad7e0e451a
+datadog-agent/wheel-0.32.2.tar.gz:
+  size: 17647
+  object_id: d56b655d-7f83-45e9-7d32-9c8fcbbd12da
+  sha: 313c581d71806654e5b56e2888c6381cfa1a12b8
+datadog-agent/zope.interface-4.6.0.tar.gz:
+  size: 150884
+  object_id: 7be485f0-cb87-4340-6818-aaa7e3cb5956
+  sha: e4dd98256b168e7888abbf6798789c775f5eae35
+python-2.7/Python-2.7.15.tgz:
+  size: 17496336
+  object_id: 7d316f85-794d-4659-6d20-9960ba589af1
+  sha: c9750707d127d39a6868e1e55f7cd8c7be006b89
+python-2.7/pip-18.1.tar.gz:
+  size: 1259370
+  object_id: 719a30d8-8794-4e6d-4712-298ef8af5fe4
+  sha: 1226368a8d39bd8b945517b6f7cb9802b279564e
+python-2.7/setuptools-40.6.2.zip:
+  size: 839184
+  object_id: 09e2d1dd-677d-4e51-4382-2d6f39ec04a2
+  sha: 49f14096136fbecdbdf700ba1a95c20fc772187f
 spruce/spruce:
+  size: 10594008
   object_id: a4b53617-9fb1-4085-b6dd-82b7783b7c9c
   sha: 233fa7fc416e1213c63711eb7c3f0b94f000d131
-  size: 10594008

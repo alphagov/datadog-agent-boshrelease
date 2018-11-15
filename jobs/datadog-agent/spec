@@ -2,6 +2,7 @@
 name: datadog-agent
 packages:
 - datadog-agent
+- python-2.7
 - spruce
 templates:
   bin/collector_ctl: bin/collector_ctl
